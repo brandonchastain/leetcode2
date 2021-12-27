@@ -1,0 +1,5 @@
+#!/bin/bash
+
+PROJ_NAME=${1?Error: no project name given}
+
+dotnet new leetcode -n $PROJ_NAME

@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Brandon Chastain",
+    "classifications": [ "Common", "Console" ],
+    "identity": "BrandonChastain.LeetCodeTemplate.CSharp",
+    "name": "LeetCode problem template",
+    "shortName": "leetcode",
+    "sourceName": "LCTemplate",
+    "sources":
+    [
+        {
+          "modifiers": [
+            { "exclude": [ ".vs/**", ".template_config/**" ] }
+          ]
+        }
+    ],
+    "preferNameDirectory": true
+}
