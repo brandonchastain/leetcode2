@@ -34,7 +34,7 @@ Approach 1:
     The first palindrome encountered must be the longest one.
     Time: O(n^3) because we check up to n/2 substrings for
           being a palindrome, n times.
-          Checking a substring for a palindrome is also O(n)
+          Checking a substring for a palindrome O(n).
 */
 public class Solution {
     public string LongestPalindrome(string s) {

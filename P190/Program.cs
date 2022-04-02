@@ -1,13 +1,14 @@
 ﻿using DataStructures;
 
 var s = new Solution();
-Console.WriteLine(0x80000000);
-Assert(s.reverseBits(0x0001) == 0x80000000);
+AssertEqual(s.reverseBits(0x1), 0x80000000);
+AssertEqual(s.reverseBits(4294967293), 3221225471u);
+AssertEqual(s.reverseBits(43261596), 964176192u);
 Console.WriteLine("All test cases pass!");
 
-static void Assert(bool condition)
+static void AssertEqual(object a, object b)
 {
-    if (!condition) throw new Exception("Assert failed");
+    if (!a.Equals(b)) throw new Exception($"Assert failed. Expected {a} but found {b}.");
 }
 
 /*
@@ -62,13 +63,27 @@ public class Solution
         int count = 0;
         while (count < 32)
         {
-            uint bit = n | 0x01;
             output = output << 1;
+            uint bit = n & 0x01;
             output |= bit;
             n = n >> 1;
             count++;
-            Console.WriteLine(output);
         }
         return output;
+    }
+
+    private void WriteBits(uint n)
+    {
+        var list = new List<uint>();
+        int count = 0;
+        while (count < 32)
+        {
+            uint bit = n & 0x1;
+            list.Insert(0, bit);
+            n = n >> 1;
+            count++;
+        }
+
+        Console.WriteLine(String.Join(",", list));
     }
 }
