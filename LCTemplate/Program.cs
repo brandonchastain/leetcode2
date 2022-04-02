@@ -1,12 +1,12 @@
 ﻿using DataStructures;
 
 var s = new Solution();
-Assert(s.m1() == 0);
+AssertEqual(0, s.m1());
 Console.WriteLine("All test cases pass!");
 
-static void Assert(bool condition)
+static void AssertEqual(object a, object b)
 {
-    if (!condition) throw new Exception("Assert failed");
+    if (!a.Equals(b)) throw new Exception($"Assert failed. Expected {a} but found {b}.");
 }
 
 /*
